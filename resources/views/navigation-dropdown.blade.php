@@ -16,6 +16,12 @@
                         {{ __('Dashboard') }}
                     </x-jet-nav-link>
                 </div>
+
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-jet-nav-link href="{{ route('user.index') }}" :active="request()->routeIs('user.index')">
+                        {{ __('User') }}
+                    </x-jet-nav-link>
+                </div>
             </div>
 
             <!-- Settings Dropdown -->
@@ -120,6 +126,12 @@
             <x-jet-responsive-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
                 {{ __('Dashboard') }}
             </x-jet-responsive-nav-link>
+        </div>
+
+        <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+            <x-jet-nav-link href="{{ route('user.index') }}" :active="request()->routeIs('user.index')">
+                {{ __('User') }}
+            </x-jet-nav-link>
         </div>
 
         <!-- Responsive Settings Options -->

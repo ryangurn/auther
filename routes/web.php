@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,6 +18,15 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
-    return view('dashboard');
-})->name('dashboard');
+// authentication
+Route::group(['middleware' => 'auth:sanctum', 'verified'], function (){
+    Route::get('/dashboard', function(){
+       return view('dashboard');
+    })->name('dashboard');
+
+    Route::group(['prefix' => 'user'], function(){
+       Route::get('/', [UserController::class, 'index'])->name('user.index');
+       Route::get('/create', [UserController::class, 'create'])->name('user.create');
+       Route::get('/update/{user}', [UserController::class, 'edit'])->name('user.update');
+    });
+});
