@@ -19,7 +19,7 @@ Route::get('/', function () {
 });
 
 // authentication
-Route::group(['middleware' => 'auth:sanctum', 'verified'], function (){
+Route::group(['middleware' => ['auth:sanctum', 'verified']], function (){
     Route::get('/dashboard', function(){
        return view('dashboard');
     })->name('dashboard');
