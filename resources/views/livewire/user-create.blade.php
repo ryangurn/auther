@@ -40,6 +40,10 @@
                                 <div class="col-span-6 sm:col-span-6">
                                     <span class="pt-2 pb-2 pl-4 pr-4 rounded-full text-orange-700 bg-orange-100">roles & permissions can be added via the user specific update form.</span>
                                 </div>
+
+                                <div class="col-span-6 sm:col-span-6">
+                                    <span class="pt-2 pb-2 pl-4 pr-4 rounded-full text-purple-700 bg-purple-100">the default role (as specified in settings) will be applied to the user.</span>
+                                </div>
                             </div>
                         </div>
                         <div class="px-4 py-3 bg-gray-50 text-right sm:px-6">
