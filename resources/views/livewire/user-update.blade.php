@@ -49,7 +49,7 @@
                                     <div class="col-span-6 sm:col-span-3">
                                         <div class="flex items-start">
                                             <div class="flex items-center h-5">
-                                                <input wire:model="reset_password" id="reset_password" name="reset_password" type="checkbox" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded">
+                                                <input wire:model="reset_password" id="reset_password" name="reset_password" value="yes" type="checkbox" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded">
                                             </div>
                                             <div class="ml-3 text-sm">
                                                 <label for="reset_password" class="font-medium text-gray-700">reset password</label>
