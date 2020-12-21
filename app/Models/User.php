@@ -62,4 +62,21 @@ class User extends Authenticatable implements MustVerifyEmail
     protected $appends = [
         'profile_photo_url',
     ];
+
+    public function getNameAttribute($value)
+    {
+        return strtolower($value);
+    }
+
+    public function getPhoneAttribute($value)
+    {
+        if ($value != null)
+        {
+            return phone($value)->formatInternational();
+        }
+        else
+        {
+            return null;
+        }
+    }
 }

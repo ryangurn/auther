@@ -33,7 +33,7 @@
                                 </div>
                                 <div class="ml-4">
                                     <div class="text-sm font-medium text-gray-900">
-                                        {{ $user->name }}
+                                        <a href="{{ route('user.show', $user->id) }}" class="hover:underline">{{ $user->name }}</a>
                                     </div>
                                     <div class="text-sm text-gray-500">
                                         {{ $user->email }}

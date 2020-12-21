@@ -20,7 +20,7 @@ class UserUpdate extends Component
     protected $rules = [
         'name' => 'required|min:5|max:255',
         'email' => ['required', 'email'],
-        'phone' => 'nullable|regex:/^(\+\d{1,2}\s?)?1?\-?\.?\s?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}$/|min:10',
+        'phone' => 'nullable|phone:auto',
         'address' => 'nullable',
         'reset_password' => 'nullable'
     ];
@@ -29,7 +29,7 @@ class UserUpdate extends Component
     {
         $this->name = $this->user->name;
         $this->email = $this->user->email;
-        $this->phone = $this->user->phone;
+        $this->phone = phone($this->user->phone)->formatE164();
         $this->address = $this->user->address;
 
         $this->rules['email'][] = Rule::unique('users')->ignore($this->user->id);

@@ -26,7 +26,8 @@ Route::group(['middleware' => ['auth:sanctum', 'verified']], function (){
 
     Route::group(['prefix' => 'user'], function(){
        Route::get('/', [UserController::class, 'index'])->name('user.index');
-       Route::get('/create', [UserController::class, 'create'])->name('user.create');
-       Route::get('/update/{user}', [UserController::class, 'edit'])->name('user.update');
+        Route::get('/create', [UserController::class, 'create'])->name('user.create');
+        Route::get('/update/{user}', [UserController::class, 'edit'])->name('user.update');
+        Route::get('/{user:id}', [UserController::class, 'show'])->name('user.show');
     });
 });

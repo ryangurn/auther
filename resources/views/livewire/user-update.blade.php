@@ -35,13 +35,13 @@
                                     </div>
 
                                     <div class="col-span-6 sm:col-span-3">
-                                        <label for="phone" class="block text-sm font-medium text-gray-700">phone <span class="text-red-700">*</span></label>
+                                        <label for="phone" class="block text-sm font-medium text-gray-700">phone</label>
                                         <input wire:model="phone" type="text" name="phone" class="@error('phone') mb-4 @enderror border-solid border-2 border-grey-light mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md p-2">
                                         @error('phone') <span class="pt-2 pb-2 pl-4 pr-4 rounded-full text-red-700 bg-red-100">{{ strtolower($message) }}</span> @enderror
                                     </div>
 
                                     <div class="col-span-6 sm:col-span-3">
-                                        <label for="address" class="block text-sm font-medium text-gray-700">address <span class="text-red-700">*</span></label>
+                                        <label for="address" class="block text-sm font-medium text-gray-700">address</label>
                                         <input wire:model="address" type="text" name="address" class="@error('address') mb-4 @enderror border-solid border-2 border-grey-light mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md p-2">
                                         @error('address') <span class="pt-2 pb-2 pl-4 pr-4 rounded-full text-red-700 bg-red-100">{{ strtolower($message) }}</span> @enderror
                                     </div>
