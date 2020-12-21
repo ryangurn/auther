@@ -4,14 +4,14 @@
             <div class="md:grid md:grid-cols-3 md:gap-6">
                 <div class="md:col-span-1">
                     <div class="px-4 sm:px-0">
-                        <h3 class="text-lg font-medium leading-6 text-gray-900">delete user: {{ $user->name }}</h3>
+                        <h3 class="text-lg font-medium leading-6 text-gray-900">update role for {{ $user->name }}</h3>
                         <p class="mt-1 text-sm text-gray-600">
-                            here you can delete the user, keep in mind that this is permanent. if you are not sure about this action, we recommend disabling the user instead.
+                            here you can update the role information that is applied to the user, this will instantly update the users permissions within the system upon updating.
                         </p>
                     </div>
                 </div>
                 <div class="mt-5 md:mt-0 md:col-span-2">
-                    <x-jet-confirms-password wire:then="save">
+                    <form wire:submit.prevent="save">
                         {{ csrf_field() }}
                         <div class="shadow overflow-hidden sm:rounded-md">
                             <div class="px-4 py-5 bg-white sm:p-6">
@@ -21,18 +21,22 @@
                                             <span class="mb-4 pt-2 pb-2 pl-4 pr-4 rounded-full text-green-700 bg-green-100">{{ strtolower(session('saved')) }}</span>
                                         </div>
                                     @endif
-                                    <div class="mb-4 col-span-6 sm:col-span-6">
-                                        <span class="text-red-600">are you sure you would like to delete the user {{ $user->name }}, this action is permanent and can cause roll on effects throughout the various micro-services that are connected.</span>
+                                </div>
+
+                                <div class="col-span-6 sm:col-span-3">
+                                        <label for="roles" class="block text-sm font-medium text-gray-700">roles <span class="text-red-700">*</span></label>
+                                        <x-form-select multiple class="@error('roles') mb-4 @enderror border-solid border-2 border-grey-light mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md p-2" wire:model="roles" name="roles" :options="$rolesData" />
+                                        @error('roles') <span class="pt-2 pb-2 pl-4 pr-4 rounded-full text-red-700 bg-red-100">{{ strtolower($message) }}</span> @enderror
                                     </div>
                                 </div>
-                            </div>
+
                             <div class="px-4 py-3 bg-gray-50 text-right sm:px-6">
-                                <x-jet-button type="submit" class="text-white bg-red-600 hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500" wire:loading.attr="disabled">
-                                    {{ __('delete') }}
+                                <x-jet-button type="submit" class="text-white bg-yellow-600 hover:bg-yellow-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-yellow-500" wire:loading.attr="disabled">
+                                    {{ __('update') }}
                                 </x-jet-button>
                             </div>
                         </div>
-                    </x-jet-confirms-password>
+                    </form>
                 </div>
             </div>
         </div>
