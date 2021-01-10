@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\SettingController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,9 +26,15 @@ Route::group(['middleware' => ['auth:sanctum', 'verified']], function (){
     })->name('dashboard');
 
     Route::group(['prefix' => 'user'], function(){
-       Route::get('/', [UserController::class, 'index'])->name('user.index');
+        Route::get('/', [UserController::class, 'index'])->name('user.index');
         Route::get('/create', [UserController::class, 'create'])->name('user.create');
         Route::get('/update/{user}', [UserController::class, 'edit'])->name('user.update');
         Route::get('/{user:id}', [UserController::class, 'show'])->name('user.show');
+    });
+
+    Route::group(['prefix' => 'setting'], function(){
+        Route::get('/', [SettingController::class, 'index'])->name('setting.index');
+        Route::get('/update/{setting}', [SettingController::class, 'edit'])->name('setting.update');
+        Route::get('/{setting:id}', [SettingController::class, 'show'])->name('setting.show');
     });
 });
