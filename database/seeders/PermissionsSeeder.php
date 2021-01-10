@@ -20,17 +20,20 @@ class PermissionsSeeder extends Seeder
         $normal = Role::firstOrCreate(['name' => 'normal']);
 
         // permissions
-        $user_create = Permission::firstOrCreate(['name' => 'user.create']);
-        $user_read = Permission::firstOrCreate(['name' => 'user.read']);
-        $user_update = Permission::firstOrCreate(['name' => 'user.update']);
-        $user_delete = Permission::firstOrCreate(['name' => 'user.delete']);
-        $user_reverify = Permission::firstOrCreate(['name' => 'user.reverify']);
+        $user_create = Permission::firstOrCreate(['name' => 'user.create', 'description' => 'This permission controls a users ability to create another user.']);
+        $user_read = Permission::firstOrCreate(['name' => 'user.read', 'description' => 'This permission controls a users ability to read information on another user.']);
+        $user_update = Permission::firstOrCreate(['name' => 'user.update', 'description' => 'This permission controls a users ability to update another user.']);
+        $user_delete = Permission::firstOrCreate(['name' => 'user.delete', 'description' => 'This permission controls a users ability to delete or disable another user.']);
+        $user_reverify = Permission::firstOrCreate(['name' => 'user.reverify', 'description' => 'This permission controls a users ability to force a reverification of another user.']);
+        $user_assign = Permission::firstOrCreate(['name' => 'user.assign', 'description' => 'This permission controls a users ability to assign roles to another user.']);
+        $user_unassign = Permission::firstOrCreate(['name' => 'user.unassign', 'description' => 'This permission controls a users ability to unassign roles from another user.']);
 
-        $role_create = Permission::firstOrCreate(['name' => 'role.create']);
-        $role_read = Permission::firstOrCreate(['name' => 'role.read']);
-        $role_update = Permission::firstOrCreate(['name' => 'role.update']);
-        $role_delete = Permission::firstOrCreate(['name' => 'role.delete']);
-        $role_assign = Permission::firstOrCreate(['name' => 'role.assign']);
-        $role_unassign = Permission::firstOrCreate(['name' => 'role.unassign']);
+
+        $role_create = Permission::firstOrCreate(['name' => 'role.create', 'description' => 'This permission controls a users ability to create a role.']);
+        $role_read = Permission::firstOrCreate(['name' => 'role.read', 'description' => 'This permission controls a users ability to read information on a role.']);
+        $role_update = Permission::firstOrCreate(['name' => 'role.update', 'description' => 'This permission controls a users ability to update a role.']);
+        $role_delete = Permission::firstOrCreate(['name' => 'role.delete', 'description' => 'This permission controls a users ability to delete a role.']);
+        $role_assign = Permission::firstOrCreate(['name' => 'role.assign', 'description' => 'This permission controls a users ability to assign permissions to a role.']);
+        $role_unassign = Permission::firstOrCreate(['name' => 'role.unassign', 'description' => 'This permission controls a users ability to unassign permissions from a role.']);
     }
 }
