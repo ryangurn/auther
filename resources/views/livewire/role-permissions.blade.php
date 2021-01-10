@@ -9,11 +9,11 @@
             <div>
                 <dl>
                     @foreach($role->permissions as $permission)
-                    <div class="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-                        <dt class="text-sm font-medium text-gray-500">
+                    <div class="bg-{{ !($permission->id % 2) ? 'gray-50' : 'white' }} px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                        <dt class="text-sm font-medium text-{{ !($permission->id % 2) ? 'gray-900' : 'gray-900' }}">
                             {{ $permission->name }}
                         </dt>
-                        <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+                        <dd class="mt-1 text-sm text-{{ !($permission->id % 2) ? 'gray-500' : 'gray-500' }} sm:mt-0 sm:col-span-2">
                             {{ $permission->description }}
                         </dd>
                     </div>

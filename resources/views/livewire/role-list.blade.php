@@ -14,7 +14,7 @@
                         </span>
                             </div>
                             <div class="px-4 py-1 bg-gray-50 text-left sm:px-4">
-                                <a href="" class="hover:underline">Edit</a>
+                                <a href="{{ route('role.update', $role->id) }}" class="hover:underline">Edit</a>
                             </div>
                         </div>
                     </div>
