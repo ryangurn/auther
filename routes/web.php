@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\SettingController;
+use App\Http\Controllers\RoleController;
 
 /*
 |--------------------------------------------------------------------------
@@ -36,5 +37,10 @@ Route::group(['middleware' => ['auth:sanctum', 'verified']], function (){
         Route::get('/', [SettingController::class, 'index'])->name('setting.index');
         Route::get('/update/{setting}', [SettingController::class, 'edit'])->name('setting.update');
         Route::get('/{setting:id}', [SettingController::class, 'show'])->name('setting.show');
+    });
+
+    Route::group(['prefix' => 'role'], function() {
+        Route::get('/', [RoleController::class, 'index'])->name('role.index');
+        Route::get('/{role:id}', [RoleController::class, 'show'])->name('role.show');
     });
 });

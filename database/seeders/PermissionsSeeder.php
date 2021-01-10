@@ -35,5 +35,12 @@ class PermissionsSeeder extends Seeder
         $role_delete = Permission::firstOrCreate(['name' => 'role.delete', 'description' => 'This permission controls a users ability to delete a role.']);
         $role_assign = Permission::firstOrCreate(['name' => 'role.assign', 'description' => 'This permission controls a users ability to assign permissions to a role.']);
         $role_unassign = Permission::firstOrCreate(['name' => 'role.unassign', 'description' => 'This permission controls a users ability to unassign permissions from a role.']);
+
+        $admin_sync = [$user_create, $user_read, $user_update, $user_delete, $user_reverify, $user_assign, $user_unassign,
+            $role_create, $role_read, $role_update, $role_delete, $role_assign, $role_unassign];
+        $normal_sync = [$user_read, $role_read];
+
+        $admin->syncPermissions($admin_sync);
+        $normal->syncPermissions($normal_sync);
     }
 }
