@@ -14,7 +14,7 @@ class SettingController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return Response
+     * @return Application|Factory|View|Response
      */
     public function index()
     {
@@ -36,21 +36,10 @@ class SettingController extends Controller
      * Show the form for editing the specified resource.
      *
      * @param Setting $setting
-     * @return Response
+     * @return Application|Factory|View|Response
      */
     public function edit(Setting $setting)
     {
         return view('setting.update', compact('setting'));
-    }
-    
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param Setting $setting
-     * @return Response
-     */
-    public function destroy(Setting $setting)
-    {
-        //
     }
 }
