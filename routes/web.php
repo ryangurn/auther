@@ -41,6 +41,7 @@ Route::group(['middleware' => ['auth:sanctum', 'verified']], function (){
 
     Route::group(['prefix' => 'role'], function() {
         Route::get('/', [RoleController::class, 'index'])->name('role.index');
+        Route::get('/update/{role}', [RoleController::class, 'edit'])->name('role.update');
         Route::get('/{role:id}', [RoleController::class, 'show'])->name('role.show');
     });
 });

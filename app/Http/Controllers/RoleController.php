@@ -45,12 +45,12 @@ class RoleController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
-     * @return Response
+     * @param Role $role
+     * @return Application|Factory|View|Response
      */
-    public function edit($id)
+    public function edit(Role $role)
     {
-        //
+        return view('role.update', compact('role'));
     }
 
 }
