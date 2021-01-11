@@ -47,7 +47,7 @@
                                 {{ __('Role') }}
                             </x-jet-dropdown-link>
 
-                            <x-jet-dropdown-link href="">
+                            <x-jet-dropdown-link href="{{ route('permission.index') }}">
                                 {{ __('Permission') }}
                             </x-jet-dropdown-link>
                         </x-slot>
