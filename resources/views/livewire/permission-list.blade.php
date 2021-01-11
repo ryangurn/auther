@@ -24,7 +24,7 @@
                             <div class="flex items-center">
                                 <div class="ml-4">
                                     <div class="text-sm font-medium text-gray-900">
-                                        <a href="" class="hover:underline">{{ $permission->name }}</a>
+                                        {{ $permission->name }}
                                     </div>
                                 </div>
                             </div>
