@@ -6,7 +6,7 @@
                     <div class="px-4 sm:px-0">
                         <h3 class="text-lg font-medium leading-6 text-gray-900">update role: {{ $role->name }}</h3>
                         <p class="mt-1 text-sm text-gray-600">
-
+							here you can update the value for a role, upon saving the changes will be <b>instantly</b> applied and utilized by the rest of auther.
                         </p>
                     </div>
                 </div>

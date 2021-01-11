@@ -29,7 +29,8 @@ class UserUpdate extends Component
     {
         $this->name = $this->user->name;
         $this->email = $this->user->email;
-        $this->phone = phone($this->user->phone)->formatE164();
+		if ($this->user->phone != null)
+        	$this->phone = phone($this->user->phone)->formatE164();
         $this->address = $this->user->address;
 
         $this->rules['email'][] = Rule::unique('users')->ignore($this->user->id);
