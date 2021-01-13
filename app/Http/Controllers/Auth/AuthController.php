@@ -38,23 +38,23 @@ class AuthController extends Controller
     	]);
     }
 
-    public function register(Request $request) {
-    	$request->validate([
-    		'name' => 'required|string',
-    		'email' => 'required|string|email|unique:users',
-    		'password' => 'required|string'
-    	]);
+    // public function register(Request $request) {
+    // 	$request->validate([
+    // 		'name' => 'required|string',
+    // 		'email' => 'required|string|email|unique:users',
+    // 		'password' => 'required|string'
+    // 	]);
 
-    	$user = new User;
-    	$user->name = $request->name;
-    	$user->email = $request->email;
-    	$user->password = bcrypt($request->password);
-    	$user->save();
+    // 	$user = new User;
+    // 	$user->name = $request->name;
+    // 	$user->email = $request->email;
+    // 	$user->password = bcrypt($request->password);
+    // 	$user->save();
 
-    	return response()->json([
-    		'message' => 'Successfully created user!'
-    	], 201);
-    }
+    // 	return response()->json([
+    // 		'message' => 'Successfully created user!'
+    // 	], 201);
+    // }
 
     public function logout(Request $request) {
     	$request->user()->token()->revoke();
