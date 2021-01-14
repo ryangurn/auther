@@ -38,7 +38,7 @@
                         </x-slot>
 
                         <x-slot name="content">
-                            <!-- Account Management -->
+                            <!-- Permission Management -->
                             <div class="block px-4 py-2 text-xs text-gray-400">
                                 {{ __('Permission Management') }}
                             </div>
@@ -49,6 +49,34 @@
 
                             <x-jet-dropdown-link href="{{ route('permission.index') }}">
                                 {{ __('Permission') }}
+                            </x-jet-dropdown-link>
+                            <!-- OAuth Management -->
+                            <div class="block px-4 py-2 text-xs text-gray-400">
+                                {{ __('OAuth Management') }}
+                            </div>
+
+                            <x-jet-dropdown-link href="{{ route('auth.dashboard') }}">
+                                {{ __('Dashboard') }}
+                            </x-jet-dropdown-link>
+
+                            <x-jet-dropdown-link href="{{ route('auth.access_tokens') }}">
+                                {{ __('Access Tokens') }}
+                            </x-jet-dropdown-link>
+
+                            <x-jet-dropdown-link href="{{ route('auth.auth_codes') }}">
+                                {{ __('Auth Codes') }}
+                            </x-jet-dropdown-link>
+
+                            <x-jet-dropdown-link href="{{ route('auth.clients') }}">
+                                {{ __('Clients') }}
+                            </x-jet-dropdown-link>
+
+                            <x-jet-dropdown-link href="{{ route('auth.personal_access_clients') }}">
+                                {{ __('Personal Access Clients') }}
+                            </x-jet-dropdown-link>
+
+                            <x-jet-dropdown-link href="{{ route('auth.refresh_tokens') }}">
+                                {{ __('Refresh Tokens') }}
                             </x-jet-dropdown-link>
                         </x-slot>
                     </x-jet-dropdown>
