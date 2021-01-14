@@ -10,7 +10,11 @@
                             <h1 class="text-lg font-bold">{{ $setting->key }}</h1>
                         </a>
                         <span class="px-2 inline-flex text-xs width- leading-5 font-semibold rounded-full bg-green-100 text-green-800">
-                              {{ $setting->value }}
+                            @if(strlen($setting->value) > 32)
+                            {{ substr($setting->value, 0, 32) }}...
+                            @else
+                            {{ $setting->value }}
+                            @endif
                         </span>
                     </div>
                     <div class="px-4 py-1 bg-gray-50 text-left sm:px-4">

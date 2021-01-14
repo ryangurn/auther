@@ -27,19 +27,7 @@
                         @foreach ($users as $user)
                     <tr>
                         <td class="px-6 py-4 whitespace-nowrap">
-                            <div class="flex items-center">
-                                <div class="flex-shrink-0 h-10 w-10">
-                                    <img class="h-10 w-10 rounded-full" src="{{ $user->profile_photo_url }}" alt="">
-                                </div>
-                                <div class="ml-4">
-                                    <div class="text-sm font-medium text-gray-900">
-                                        <a href="{{ route('user.show', $user->id) }}" class="hover:underline">{{ $user->name }}</a>
-                                    </div>
-                                    <div class="text-sm text-gray-500">
-                                        {{ $user->email }}
-                                    </div>
-                                </div>
-                            </div>
+                            @livewire('user-table-cell', ['user' => $user, 'show_email' => true, 'link' => route('user.show', $user->id)])
                         </td>
                         <td class="px-6 py-4 whitespace-nowrap">
                             <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-{{ $user->two_factor_secret == null ? "red" : "green" }}-100 text-{{ $user->two_factor_secret == null ? "red" : "green" }}-800">

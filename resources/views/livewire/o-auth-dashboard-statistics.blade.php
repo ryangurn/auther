@@ -2,7 +2,7 @@
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="mt-10">
       <dl class="space-y-10 md:space-y-0 md:grid md:grid-cols-5 md:gap-x-8 md:gap-y-10">
-        <div class="flex">
+        <a href="{{ route('auth.access_tokens') }}" class="flex">
           <div class="flex-shrink-0">
             <div class="flex items-center justify-center h-12 w-12 rounded-md bg-purple-500 text-white">
               <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -18,27 +18,27 @@
               Tokens
             </dd>
           </div>
-        </div>
+        </a>
 
-          <div class="flex">
-              <div class="flex-shrink-0">
-                  <div class="flex items-center justify-center h-12 w-12 rounded-md bg-green-500 text-white">
-                      <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
-                      </svg>
-                  </div>
-              </div>
-              <div class="ml-4">
-                  <dt class="text-lg leading-6 font-medium text-green-900">
-                      {{ $refresh_tokens }}
-                  </dt>
-                  <dd class="mt-1 text-base text-green-500">
-                      Refresh Tokens
-                  </dd>
+        <a href="{{ route('auth.refresh_tokens') }}" class="flex">
+          <div class="flex-shrink-0">
+              <div class="flex items-center justify-center h-12 w-12 rounded-md bg-green-500 text-white">
+                  <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+                  </svg>
               </div>
           </div>
+          <div class="ml-4">
+              <dt class="text-lg leading-6 font-medium text-green-900">
+                  {{ $refresh_tokens }}
+              </dt>
+              <dd class="mt-1 text-base text-green-500">
+                  Refresh Tokens
+              </dd>
+          </div>
+        </a>
 
-        <div class="flex">
+        <a href="{{ route('auth.auth_codes') }}" class="flex">
           <div class="flex-shrink-0">
             <div class="flex items-center justify-center h-12 w-12 rounded-md bg-gray-500 text-white">
               <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -54,9 +54,9 @@
               Codes
             </dd>
           </div>
-        </div>
+        </a>
 
-        <div class="flex">
+        <a href="{{ route('auth.clients') }}" class="flex">
           <div class="flex-shrink-0">
             <div class="flex items-center justify-center h-12 w-12 rounded-md bg-red-500 text-white">
               <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -72,9 +72,9 @@
               Clients
             </dd>
           </div>
-        </div>
+        </a>
 
-        <div class="flex">
+        <a href="{{ route('auth.personal_access_clients') }}" class="flex">
           <div class="flex-shrink-0">
             <div class="flex items-center justify-center h-12 w-12 rounded-md bg-yellow-500 text-white">
               <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -90,7 +90,7 @@
               Access Clients
             </dd>
           </div>
-        </div>
+        </a>
       </dl>
     </div>
   </div>

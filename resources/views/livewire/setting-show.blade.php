@@ -28,7 +28,7 @@
                             last updated
                         </dt>
                         <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-                            {{ $setting->updated_at->diffForHumans() }}
+                            @livewire('timestamp-cell', ['timestamp' => $setting->updated_at, 'shorten' => false])
                         </dd>
                     </div>
                 </dl>
