@@ -50,7 +50,7 @@ Route::group(['middleware' => ['auth:sanctum', 'verified']], function () {
         Route::get('/update/{role}', [RoleController::class, 'edit'])->name('role.update');
         Route::get('/{role:id}', [RoleController::class, 'show'])->name('role.show');
     });
-	
+
     // permissions
 	Route::group(['prefix' => 'permission'], function () {
 		Route::get('/', [PermissionController::class, 'index'])->name('permission.index');
@@ -62,6 +62,7 @@ Route::group(['middleware' => ['auth:sanctum', 'verified']], function () {
 
         Route::group(['prefix' => 'access_tokens'], function (){
             Route::get('/', [OAuthController::class, 'access_tokens'])->name('auth.access_tokens');
+            Route::get('/{token}', [OAuthController::class, 'access_tokens_show'])->name('auth.access_tokens_show');
         });
 
         Route::group(['prefix' => 'auth_codes'], function (){

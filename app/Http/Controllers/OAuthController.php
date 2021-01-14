@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Laravel\Passport\Token;
 
 class OAuthController extends Controller
 {
@@ -12,6 +13,10 @@ class OAuthController extends Controller
 
     public function access_tokens (Request $request){
     	return view('oauth.access_tokens');
+    }
+
+    public function access_tokens_show (Token $token){
+        return view('oauth.access_tokens_show', compact('token'));
     }
 
     public function auth_codes (Request $request){
