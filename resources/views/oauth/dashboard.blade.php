@@ -21,9 +21,16 @@
         </div>
     </div>
 
-    <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+    <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 pb-8">
         <dl class="space-y-0 grid grid-cols-2 gap-x-8 gap-y-10">
             @livewire('o-auth-tokens-table')
+            @livewire('o-auth-refresh-tokens-table')
+        </dl>
+    </div>
+
+
+    <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+        <dl class="space-y-0 grid grid-cols-1 gap-x-8 gap-y-10">
             @livewire('o-auth-codes-table')
         </dl>
     </div>

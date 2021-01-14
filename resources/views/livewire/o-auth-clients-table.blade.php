@@ -15,7 +15,7 @@
                             Redirect
                         </th>
                         <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                            Personal
+                            Access<br />Client
                         </th>
                         <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                             Revoked
@@ -27,12 +27,12 @@
                         @foreach($clients as $client)
                             <tr>
                                 <td class="px-6 py-4 whitespace-nowrap">
-                                    <div class="text-sm text-gray-900">{{ $client->name }}</div>
+                                    <div class="text-sm text-gray-900">{{ strtolower($client->name) }}</div>
                                 </td>
                                 <td class="px-6 py-4 whitespace-nowrap">
                                     @if($client->provider != null)
                                     <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-purple-100 text-purple-800">
-                                        {{ $client->provider }}
+                                        {{ strtolower($client->provider) }}
                                     </span>
                                     @else
                                     <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-gray-100 text-gray-800">
@@ -41,14 +41,16 @@
                                     @endif
                                 </td>
                                 <td class="px-6 py-4 whitespace-nowrap">
-                                    {{ $client->redirect }}
+                                    {{ strtolower($client->redirect) }}
                                 </td>
                                 <td class="px-6 py-4 whitespace-nowrap">
-
+                                    <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-{{ $client->personal_access_client ? 'yellow' : 'orange' }}-100 text-{{ $client->personal_access_client ? 'yellow' : 'orange' }}-800">
+                                        {{ $client->personal_access_client ? 'yes' : 'no' }}
+                                    </span>
                                 </td>
                                 <td class="px-6 py-4 whitespace-nowrap">
                                     <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-{{ $client->revoked ? 'red' : 'green' }}-100 text-{{ $client->revoked ? 'red' : 'green' }}-800">
-                                        {{ $client->revoked ? 'Revoked' : 'Valid' }}
+                                        {{ $client->revoked ? 'revoked' : 'valid' }}
                                     </span>
                                 </td>
                             </tr>

@@ -24,4 +24,4 @@ Homestead.json
 .idea
 composer.json
 .DS_Store
-
+composer.lock
