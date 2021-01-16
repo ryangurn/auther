@@ -48,7 +48,7 @@
                             @livewire('timestamp-cell', ['timestamp' => $token->expires_at])
                         </td>
                         <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                            <a href="#" class="text-red-600 hover:text-red-900">Revoke</a>
+                            <a href="{{ route('auth.access_tokens_revoke', $token->id) }}" class="text-red-600 hover:text-red-900">Revoke</a>
                             <a href="{{ route('auth.access_tokens_show', $token->id) }}" class="text-indigo-600 hover:text-indigo-900">Show</a>
                         </td>
                     </tr>

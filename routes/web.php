@@ -62,6 +62,7 @@ Route::group(['middleware' => ['auth:sanctum', 'verified']], function () {
 
         Route::group(['prefix' => 'access_tokens'], function (){
             Route::get('/', [OAuthController::class, 'access_tokens'])->name('auth.access_tokens');
+            Route::get('/revoke/{token}', [OAuthController::class, 'access_tokens_revoke'])->name('auth.access_tokens_revoke');
             Route::get('/{token}', [OAuthController::class, 'access_tokens_show'])->name('auth.access_tokens_show');
         });
 
