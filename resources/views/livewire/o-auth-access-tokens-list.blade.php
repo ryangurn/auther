@@ -39,9 +39,7 @@
                             <div class="text-sm text-gray-900">{{ strtolower($token->name) }}</div>
                         </td>
                         <td class="px-6 py-4 whitespace-nowrap">
-                            <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-{{ $token->revoked ? 'red' : 'green' }}-100 text-{{ $token->revoked ? 'red' : 'green' }}-800">
-                                {{ $token->revoked ? 'revoked' : 'valid' }}
-                            </span>
+                            @livewire('revoked-table-cell', ['revoked' => $token->revoked])
                         </td>
 
                         <td class="px-6 py-4 whitespace-nowrap">

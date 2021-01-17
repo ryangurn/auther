@@ -25,9 +25,7 @@
                                     @livewire('client-table-cell', ['client' => $code->client, 'link' => '#'])
                                 </td>
                                 <td class="px-6 py-4 whitespace-nowrap">
-                                    <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-{{ $code->revoked ? 'red' : 'green' }}-100 text-{{ $code->revoked ? 'red' : 'green' }}-800">
-                                        {{ $code->revoked ? 'revoked' : 'valid' }}
-                                    </span>
+                                    @livewire('revoked-table-cell', ['revoked' => $code->revoked])
                                 </td>
                                 <td class="px-6 py-4 whitespace-nowrap">
                                     @livewire('timestamp-cell', ['timestamp' => $code->expires_at, 'shorten' => true])

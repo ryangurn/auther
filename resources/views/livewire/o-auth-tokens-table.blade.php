@@ -25,7 +25,7 @@
                                 @livewire('user-table-cell', ['user' => $token->user])
                             </td>
                             <td class="px-6 py-4 whitespace-nowrap">
-                                <div class="text-sm text-gray-900">{{ strtolower($token->client->name) }}</div>
+                                @livewire('client-table-cell', ['client' => $token->client])
                             </td>
                             <td class="px-6 py-4 whitespace-nowrap">
                                 @livewire('timestamp-cell', ['timestamp' => $token->expires_at, 'shorten' => true])

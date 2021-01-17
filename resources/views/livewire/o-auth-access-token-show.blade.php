@@ -28,7 +28,7 @@
                             client
                         </dt>
                         <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-                            {{ strtolower($token->client->name) }}
+                            @livewire('client-table-cell', ['client' => $token->client, 'link' => '#'])
                         </dd>
                     </div>
                     <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
@@ -44,15 +44,7 @@
                             scopes
                         </dt>
                         <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-                            @if(!collect($token->scopes)->isEmpty())
-                                @foreach($token->scopes as $scope)
-                                    <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-orange-100 text-orange-800">
-                                        {{ $scope }}
-                                    </span>
-                                @endforeach
-                            @else
-                                no scope
-                            @endif
+                            @livewire('scopes-table-cell', ['items' => $token->scopes])
                         </dd>
                     </div>
                     <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
@@ -60,9 +52,7 @@
                             revoked
                         </dt>
                         <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-                            <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-{{ $token->revoked ? 'red' : 'green' }}-100 text-{{ $token->revoked ? 'red' : 'green' }}-800">
-                                {{ $token->revoked ? 'revoked' : 'valid' }}
-                            </span>
+                            @livewire('revoked-table-cell', ['revoked' => $token->revoked])
                         </dd>
                     </div>
                     <div class="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">

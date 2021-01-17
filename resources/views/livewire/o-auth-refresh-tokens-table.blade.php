@@ -31,14 +31,10 @@
                                     </div>
                                 </td>
                                 <td class="px-6 py-4 whitespace-nowrap">
-                                    <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-{{ $token->revoked ? 'red' : 'green' }}-100 text-{{ $token->revoked ? 'red' : 'green' }}-800">
-                                        {{ $token->revoked ? 'revoked' : 'valid' }}
-                                    </span>
+                                    @livewire('revoked-table-cell', ['revoked' => $token->revoked])
                                 </td>
                                 <td class="px-6 py-4 whitespace-nowrap">
-                                    <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
-                                        {{ $token->expires_at->diffForHumans(null, true) }}
-                                    </span>
+                                    @livewire('timestamp-cell', ['timestamp' => $token->expires_at])
                                 </td>
                             </tr>
                         @endforeach
