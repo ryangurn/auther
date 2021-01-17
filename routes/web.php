@@ -68,6 +68,7 @@ Route::group(['middleware' => ['auth:sanctum', 'verified']], function () {
 
         Route::group(['prefix' => 'auth_codes'], function (){
             Route::get('/', [OAuthController::class, 'auth_codes'])->name('auth.auth_codes');
+            Route::get('/{code}', [OAuthController::class, 'auth_codes_show'])->name('auth.auth_codes_show');
         });
 
         Route::group(['prefix' => 'clients'], function (){

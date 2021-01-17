@@ -6,6 +6,7 @@ use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\Request;
+use Laravel\Passport\AuthCode;
 use Laravel\Passport\Token;
 
 /**
@@ -52,6 +53,10 @@ class OAuthController extends Controller
      */
     public function auth_codes (Request $request){
     	return view('oauth.auth_codes');
+    }
+
+    public function auth_codes_show (AuthCode $code){
+        return view('oauth.auth_codes_show', compact('code'));
     }
 
     /**

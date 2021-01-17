@@ -47,7 +47,7 @@
                                 </td>
                                 <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
                                     <a href="" class="text-red-600 hover:text-red-900">Revoke</a>
-                                    <a href="" class="text-indigo-600 hover:text-indigo-900">Show</a>
+                                    <a href="{{ route('auth.auth_codes_show', $code->id) }}" class="text-indigo-600 hover:text-indigo-900">Show</a>
                                 </td>
                             </tr>
                         @endforeach
