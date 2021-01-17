@@ -36,7 +36,6 @@
                             scopes
                         </dt>
                         <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-{{--                            {{ dd($code->scopes) }}--}}
                             @livewire('scopes-table-cell', ['items' => json_decode($code->scopes)])
                         </dd>
                     </div>

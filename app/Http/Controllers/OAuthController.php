@@ -55,8 +55,20 @@ class OAuthController extends Controller
     	return view('oauth.auth_codes');
     }
 
+    /**
+     * @param AuthCode $code
+     * @return Application|Factory|View
+     */
     public function auth_codes_show (AuthCode $code){
         return view('oauth.auth_codes_show', compact('code'));
+    }
+
+    /**
+     * @param AuthCode $code
+     * @return Application|Factory|View
+     */
+    public function auth_codes_revoke (AuthCode $code){
+        return view('oauth.auth_codes_revoke', compact('code'));
     }
 
     /**
