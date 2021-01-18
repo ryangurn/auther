@@ -16,3 +16,4 @@ all of the microservices use a core set of api's for authentication and provisio
 3. provide permission functionality
 4. provide 2fa functionality
 5. provide simple web interface
+6. provide oauth connectivity to other services
