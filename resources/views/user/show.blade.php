@@ -11,4 +11,11 @@
             @livewire('user-show', ['user' => $user])
         </div>
     </div>
+
+    <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 pb-8">
+        <dl class="space-y-0 grid grid-cols-3 gap-x-8 gap-y-10">
+            @livewire('user-show-roles', ['user' => $user])
+            @livewire('user-show-permissions', ['user' => $user])
+        </dl>
+    </div>
 </x-app-layout>
