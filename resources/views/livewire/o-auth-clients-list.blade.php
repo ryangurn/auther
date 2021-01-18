@@ -60,7 +60,9 @@
                                     @livewire('revoked-table-cell', ['revoked' => $client->revoked])
                                 </td>
                                 <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                                    @if ($client->revoked == false)
                                     <a href="{{ route('auth.clients_revoke', $client->id) }}" class="text-red-600 hover:text-red-900">Revoke</a>
+                                    @endif
                                     <a href="{{ route('auth.clients_show', $client->id) }}" class="text-indigo-600 hover:text-indigo-900">Show</a>
                                 </td>
                             </tr>

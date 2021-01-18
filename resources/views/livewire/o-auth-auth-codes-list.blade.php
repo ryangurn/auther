@@ -46,7 +46,9 @@
                                     @livewire('timestamp-cell', ['timestamp' => $code->expires_at])
                                 </td>
                                 <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                                    @if ($code->revoked == false)
                                     <a href="{{ route('auth.auth_codes_revoke', $code->id) }}" class="text-red-600 hover:text-red-900">Revoke</a>
+                                    @endif
                                     <a href="{{ route('auth.auth_codes_show', $code->id) }}" class="text-indigo-600 hover:text-indigo-900">Show</a>
                                 </td>
                             </tr>
