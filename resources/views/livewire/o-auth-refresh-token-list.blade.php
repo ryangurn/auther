@@ -45,15 +45,17 @@
                                     </div>
                                 </td>
                                 <td class="px-6 py-4 whitespace-nowrap">
-                                    @livewire('revoked-table-cell', ['revoked' => $token->accessToken->revoked, 'prefix' => 'Access Token'])
-                                    @livewire('revoked-table-cell', ['revoked' => $token->revoked, 'prefix' => 'Refresh Token'])
+                                    @livewire('revoked-table-cell', ['revoked' => $token->accessToken->revoked, 'prefix' => 'Access Token: '])
+                                    @livewire('revoked-table-cell', ['revoked' => $token->revoked, 'prefix' => 'Refresh Token: '])
                                 </td>
 
                                 <td class="px-6 py-4 whitespace-nowrap">
                                     @livewire('timestamp-cell', ['timestamp' => $token->expires_at])
                                 </td>
                                 <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                                    <a href="" class="text-red-600 hover:text-red-900">Revoke</a>
+                                    @if ($token->revoked == false)
+                                    <a href="{{ route('auth.refresh_tokens_revoke', $token->id) }}" class="text-red-600 hover:text-red-900">Revoke</a>
+                                    @endif
                                     <a href="" class="text-indigo-600 hover:text-indigo-900">Show</a>
                                 </td>
                             </tr>

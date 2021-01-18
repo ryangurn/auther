@@ -8,6 +8,7 @@ use Illuminate\Contracts\View\View;
 use Illuminate\Http\Request;
 use Laravel\Passport\AuthCode;
 use Laravel\Passport\Client;
+use Laravel\Passport\RefreshToken;
 use Laravel\Passport\Token;
 
 /**
@@ -109,4 +110,13 @@ class OAuthController extends Controller
     public function refresh_tokens (Request $request){
     	return view('oauth.refresh_tokens');
     }
+
+    /**
+     * @param RefreshToken $token
+     * @return Application|Factory|View
+     */
+    public function refresh_tokens_show (RefreshToken $token){
+        return view('oauth.refresh_tokens_show', compact('token'));
+    }
+
 }
