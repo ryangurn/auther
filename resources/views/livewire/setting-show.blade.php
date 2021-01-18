@@ -1,9 +1,9 @@
 <div>
-    <div class="mt-8 text-2xl">
+    <div class="text-2xl">
         setting: {{ $setting->key }}
     </div>
 
-    <div class="mt-6 text-gray-500">
+    <div class="text-gray-500">
         <div class="bg-white shadow overflow-hidden sm:rounded-lg">
             <div>
                 <dl>

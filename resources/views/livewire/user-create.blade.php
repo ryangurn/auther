@@ -1,4 +1,4 @@
-<div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8 space-y-8">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
     <div class="mt-10 sm:mt-0">
         <div class="md:grid md:grid-cols-3 md:gap-6">
             <div class="md:col-span-1">
@@ -34,15 +34,15 @@
                                 </div>
 
                                 <div class="col-span-6 sm:col-span-6">
-                                    <span class="pt-2 pb-2 pl-4 pr-4 rounded-full text-green-700 bg-green-100">password will be auto generated and emailed to the user.</span>
+                                    <span class="text-sm pt-2 pb-2 pl-4 pr-4 rounded-full text-green-700 bg-green-100">password will be auto generated and emailed to the user.</span>
                                 </div>
 
                                 <div class="col-span-6 sm:col-span-6">
-                                    <span class="pt-2 pb-2 pl-4 pr-4 rounded-full text-orange-700 bg-orange-100">roles & permissions can be added via the user specific update form.</span>
+                                    <span class="text-sm pt-2 pb-2 pl-4 pr-4 rounded-full text-orange-700 bg-orange-100">roles & permissions can be added via the user specific update form.</span>
                                 </div>
 
                                 <div class="col-span-6 sm:col-span-6">
-                                    <span class="pt-2 pb-2 pl-4 pr-4 rounded-full text-purple-700 bg-purple-100">the default role (as specified in settings) will be applied to the user.</span>
+                                    <span class="text-sm pt-2 pb-2 pl-4 pr-4 rounded-full text-purple-700 bg-purple-100">the default role (as specified in settings) will be applied to the user.</span>
                                 </div>
                             </div>
                         </div>

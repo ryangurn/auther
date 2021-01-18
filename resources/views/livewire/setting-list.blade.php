@@ -1,9 +1,9 @@
 <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8 space-y-8">
-    <div class="mt-10 sm:mt-0">
+    <div class="sm:mt-0">
         <div class="md:grid md:grid-cols-4 md:gap-6">
             @if(isset($settings) && !$settings->isEmpty())
                 @foreach($settings as $setting)
-            <div class="mt-5 md:mt-0">
+            <div class="md:mt-0">
                 <div class="shadow overflow-hidden sm:rounded-md">
                     <div class="px-4 py-5 bg-white sm:p-4">
                         <a href="{{ route('setting.show', $setting->id) }}" class="hover:underline grid grid-cols-1 gap-6">

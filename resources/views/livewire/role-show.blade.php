@@ -1,5 +1,5 @@
 <div>
-    <div class="mt-8 text-2xl">
+    <div class="text-2xl">
         role information
     </div>
 

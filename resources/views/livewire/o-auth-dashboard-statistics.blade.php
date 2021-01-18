@@ -1,6 +1,4 @@
-<div class="pt-4 pb-10 bg-white">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="mt-10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <dl class="space-y-10 md:space-y-0 md:grid md:grid-cols-5 md:gap-x-8 md:gap-y-10">
         <a href="{{ route('auth.access_tokens') }}" class="flex">
           <div class="flex-shrink-0">
@@ -93,5 +91,3 @@
         </a>
       </dl>
     </div>
-  </div>
-</div>

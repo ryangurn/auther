@@ -1,5 +1,5 @@
-<div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
-    <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+<div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="mt-10 sm:mt-0">
             <div class="md:grid md:grid-cols-3 md:gap-6">
                 <div class="md:col-span-1">
@@ -22,7 +22,7 @@
                                         </div>
                                     @endif
                                     <div class="mb-4 col-span-6 sm:col-span-6">
-                                        <span class="text-red-600">are you sure you would like to revoke this access token: {{ $token->name }}, this action is permanent and can cause roll on effects throughout the various micro-services that are connected.</span>
+                                        <span class="text-red-600">{{ 'are you sure you would like to revoke this access token' }}@if($token->name != null): {{ $token->name }}@endif, this action is permanent and can cause roll on effects throughout the various micro-services that are connected.</span>
                                     </div>
                                 </div>
                             </div>
