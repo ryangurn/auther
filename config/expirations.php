@@ -16,3 +16,11 @@ return [
     'refresh' => $refresh_value,
     'pac' => $pac_value
 ];
+
+//this is required for install
+//todo: please document this somewhere.
+//return [
+//    'token' => ['year' => 0, 'month' => 1, 'day' => 1, 'hour' => 1, 'minute' => 1, 'second' => 1],
+//    'refresh' => ['year' => 0, 'month' => 1, 'day' => 1, 'hour' => 1, 'minute' => 1, 'second' => 1],
+//    'pac' => ['year' => 0, 'month' => 1, 'day' => 1, 'hour' => 1, 'minute' => 1, 'second' => 1],
+//];
