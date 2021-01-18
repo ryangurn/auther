@@ -7,9 +7,7 @@
 
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
-                @livewire('o-auth-code-show', ['code' => $code])
-            </div>
+            @livewire('o-auth-code-show', ['code' => $code])
         </div>
     </div>
 </x-app-layout>
