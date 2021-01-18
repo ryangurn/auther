@@ -85,6 +85,7 @@ Route::group(['middleware' => ['auth:sanctum', 'verified']], function () {
         Route::group(['prefix' => 'refresh_tokens'], function (){
             Route::get('/', [OAuthController::class, 'refresh_tokens'])->name('auth.refresh_tokens');
             Route::get('/revoke/{token}', [OAuthController::class, 'refresh_tokens_revoke'])->name('auth.refresh_tokens_revoke');
+            Route::get('/{token}', [OAuthController::class, 'refresh_tokens_show'])->name('auth.refresh_tokens_show');
         });
     });
 });

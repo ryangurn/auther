@@ -56,7 +56,7 @@
                                     @if ($token->revoked == false)
                                     <a href="{{ route('auth.refresh_tokens_revoke', $token->id) }}" class="text-red-600 hover:text-red-900">Revoke</a>
                                     @endif
-                                    <a href="" class="text-indigo-600 hover:text-indigo-900">Show</a>
+                                    <a href="{{ route('auth.refresh_tokens_show', $token->id) }}" class="text-indigo-600 hover:text-indigo-900">Show</a>
                                 </td>
                             </tr>
                         @endforeach

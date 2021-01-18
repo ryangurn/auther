@@ -119,4 +119,11 @@ class OAuthController extends Controller
         return view('oauth.refresh_tokens_show', compact('token'));
     }
 
+    /**
+     * @param RefreshToken $token
+     * @return Application|Factory|View
+     */
+    public function refresh_tokens_revoke (RefreshToken $token){
+        return view('oauth.refresh_tokens_revoke', compact('token'));
+    }
 }
