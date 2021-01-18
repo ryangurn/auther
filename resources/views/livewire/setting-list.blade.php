@@ -7,11 +7,11 @@
                 <div class="shadow overflow-hidden sm:rounded-md">
                     <div class="px-4 py-5 bg-white sm:p-4">
                         <a href="{{ route('setting.show', $setting->id) }}" class="hover:underline grid grid-cols-1 gap-6">
-                            <h1 class="text-lg font-bold">{{ $setting->key }}</h1>
+                            <h1 class="text-lg font-bold">@if(strlen($setting->value) > 16){{ substr($setting->key, 0, 16) }}...@else{{ $setting->key }}@endif</h1>
                         </a>
                         <span class="px-2 inline-flex text-xs width- leading-5 font-semibold rounded-full bg-green-100 text-green-800">
-                            @if(strlen($setting->value) > 32)
-                            {{ substr($setting->value, 0, 32) }}...
+                            @if(strlen($setting->value) > 16)
+                            {{ substr($setting->value, 0, 16) }}...
                             @else
                             {{ $setting->value }}
                             @endif
