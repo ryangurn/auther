@@ -43,15 +43,7 @@
                                     @livewire('client-table-cell', ['client' => $client])
                                 </td>
                                 <td class="px-6 py-4 whitespace-nowrap">
-                                    @if($client->provider != null)
-                                        <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-purple-100 text-purple-800">
-                                        {{ strtolower($client->provider) }}
-                                    </span>
-                                    @else
-                                        <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-gray-100 text-gray-800">
-                                        none
-                                    </span>
-                                    @endif
+                                    @livewire('provider-table-cell', ['provider' => $client->provider])
                                 </td>
                                 <td class="px-6 py-4 whitespace-nowrap">
                                     <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-{{ $client->personal_access_client ? 'yellow' : 'orange' }}-100 text-{{ $client->personal_access_client ? 'yellow' : 'orange' }}-800">
@@ -68,8 +60,8 @@
                                     @livewire('revoked-table-cell', ['revoked' => $client->revoked])
                                 </td>
                                 <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                                    <a href="" class="text-red-600 hover:text-red-900">Revoke</a>
-                                    <a href="" class="text-indigo-600 hover:text-indigo-900">Show</a>
+                                    <a href="{{ route('auth.clients_revoke', $client->id) }}" class="text-red-600 hover:text-red-900">Revoke</a>
+                                    <a href="{{ route('auth.clients_show', $client->id) }}" class="text-indigo-600 hover:text-indigo-900">Show</a>
                                 </td>
                             </tr>
                         @endforeach

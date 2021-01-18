@@ -7,6 +7,7 @@ use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\Request;
 use Laravel\Passport\AuthCode;
+use Laravel\Passport\Client;
 use Laravel\Passport\Token;
 
 /**
@@ -77,6 +78,20 @@ class OAuthController extends Controller
      */
     public function clients (Request $request){
     	return view('oauth.clients');
+    }
+
+    /**
+     * @param Client $client
+     */
+    public function clients_show (Client $client){
+        return view('oauth.clients_show', compact('client'));
+    }
+
+    /**
+     * @param Client $client
+     */
+    public function clients_revoke (Client $client){
+        return view('oauth.clients_revoke', compact('client'));
     }
 
     /**

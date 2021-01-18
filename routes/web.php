@@ -74,6 +74,8 @@ Route::group(['middleware' => ['auth:sanctum', 'verified']], function () {
 
         Route::group(['prefix' => 'clients'], function (){
             Route::get('/', [OAuthController::class, 'clients'])->name('auth.clients');
+            Route::get('/revoke/{client}', [OAuthController::class, 'clients_revoke'])->name('auth.clients_revoke');
+            Route::get('/{client}', [OAuthController::class, 'clients_show'])->name('auth.clients_show');
         });
 
         Route::group(['prefix' => 'personal_access_clients'], function (){
